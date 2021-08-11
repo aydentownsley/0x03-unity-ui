@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public Text healthText;
     public Text WinLoseText;
     public Image WinLoseImg;
+    public GameObject WinLose;
 
     // Start is called before the first frame update
     void Start()
@@ -84,7 +85,8 @@ public class PlayerController : MonoBehaviour
         WinLoseText.text = "You Win!";
         WinLoseText.color = new Color(0, 0, 0);
         WinLoseImg.color = new Color(0, 255, 0);
-        WinLoseImg.enabled = WinLoseText.enabled = true;    }
+        WinLose.SetActive(true);
+    }
 
     // Sets image & text color to lose scenario
     void SetLoseText()
@@ -92,7 +94,7 @@ public class PlayerController : MonoBehaviour
         WinLoseText.text = "Game Over!";
         WinLoseText.color = new Color(255, 255, 255);
         WinLoseImg.color = new Color(255, 0, 0);
-        WinLoseImg.enabled = WinLoseText.enabled = true;
+        WinLose.SetActive(true);
     }
 
     IEnumerator LoadScene(float seconds)
